@@ -50,7 +50,7 @@ if uploaded_file is None:
         
         # Note: Ensure you have a 'sample_chat.txt' file in your local folder so this doesn't crash!
         try:
-            with open("chat.txt", "rb") as file:
+            with open("sample_chat.txt", "rb") as file:
                 st.download_button(
                     label="Download Sample Chat Log",
                     data=file,
