@@ -13,13 +13,7 @@ import plotly.graph_objects as go
 from textblob import TextBlob
 import os
 from google import genai
-import plotly.io as pio
-pio.kaleido.scope.chromium_args = (
-    "--headless",
-    "--no-sandbox",
-    "--single-process",
-    "--disable-gpu"
-)
+
 def fetch_stats(selected_user, df):
     if selected_user != 'Overall':
        new_df =  df[df['Author'] == selected_user]
