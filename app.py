@@ -160,30 +160,38 @@ else :
             styles = getSampleStyleSheet()
             elements = []
             elements.append(Paragraph("WhatsApp Chat Analysis Report", styles['Title']))
-            try : 
-                fig_time.write_image("time.png")
-                elements.append(Image("time.png", width=450, height=250))
+            try :
+                fig_time.write_image("Daily Message Trajectory.png")
+                elements.append(Image("Daily Message Trajectory.png", width=450, height=250))
                 elements.append(Spacer(1,20))
                 if(selected_user == 'Overall'):
                     fig_active.write_image("active_users.png")
                     elements.append(Image("active_users.png", width=450, height=250))
                     elements.append(Spacer(1,20))
                 
-                fig_heatmap.write_image("heatmapp.png")
-                elements.append(Image("heatmapp.png", width=450, height=250))
+                fig_heatmap.write_image("Monthly Distribution.png")
+                elements.append(Image("Monthly Distribution.png", width=450, height=250))
                 elements.append(Spacer(1,20))
     
-                fig_emoji.write_image("emoji.png")
-                elements.append(Image("emoji.png", width=450, height=250))
+                fig_emoji.write_image("emoji_analysis.png")
+                elements.append(Image("emoji_analysis.png", width=450, height=250))
                 elements.append(Spacer(1,20))
     
                 # fig_wc.write_image("wc.png")
-                fig_hour.write_image("hour.png")
-                elements.append(Image("hour.png", width=450, height=250))
+                fig_hour.write_image("hourly_interaction.png")
+                elements.append(Image("hourly_interaction.png", width=450, height=250))
                 elements.append(Spacer(1,20))
     
-                fig_sentiment.write_image("sentiment.png")
-                elements.append(Image("sentiment.png", width=450, height=250))
+                fig_days.write_image("active_days.png")
+                elements.append(Image("active_days.png", width=450, height=250))
+                elements.append(Spacer(1,20))
+    
+                fig_dates.write_image("active_dates.png")
+                elements.append(Image("active_dates.png", width=450, height=250))
+                elements.append(Spacer(1,20))
+    
+                fig_sentiment.write_image("sentiment_analysis.png")
+                elements.append(Image("sentiment_analysis.png", width=450, height=250))
                 elements.append(Spacer(1,20))
             except Exception as e :
                 elements.append(Paragraph("<b>Visual Charts Notice:</b> Charts are omitted in this downloadable PDF version due to server environment restrictions. Please reference the live interactive application dashboard for full visual matrices.", styles['Normal']))
