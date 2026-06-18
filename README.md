@@ -1,142 +1,100 @@
-# 📊 WhatsApp Family Group Chat Analysis
+📊 AnalyzU – WhatsApp Chat Analytics Dashboard
 
-## 📝 Project Overview
+Live Demo: AnalyzU Streamlit App
 
-This project focuses on analyzing a family WhatsApp group chat dataset using Python for data preprocessing, exploratory data analysis (EDA), and visualization.
+AnalyzU is an interactive WhatsApp Chat Analyzer built with Python, Streamlit, Pandas, Plotly, and Generative AI. It transforms exported WhatsApp chat logs into meaningful insights through advanced visualizations, sentiment analysis, activity tracking, and AI-generated summaries.
 
-The analysis aims to identify:
+The application supports both individual chats and group conversations while maintaining user privacy through in-memory processing.
 
-* 📈 Messaging trends
-* 👥 Most active users
-* 😀 Emoji usage patterns
-* 📅 Peak activity periods
-* ⏰ Communication behavior over time
+✨ Features
+📈 Chat Statistics
+Total messages exchanged
+Total words used
+Media shared count
+Links shared count
+📅 Activity Analysis
+Daily message timeline
+Monthly interaction trends
+Most active dates
+Most active weekdays
+Peak chat hours analysis
+👥 User Participation Insights
+Top contributors in group chats
+User contribution percentages
+Individual participant analysis
+☁️ Word Cloud Generation
+Frequently used words visualization
+Hinglish stop-word filtering support
+😀 Emoji Analytics
+Most frequently used emojis
+Emoji usage distribution
+😊 Sentiment Analysis
+Positive, Neutral, and Negative message classification
+User-wise sentiment breakdown
+Conversation mood visualization
+🤖 AI-Powered Insights
+Chat summarization using Google Gemini
+Automated key takeaways from conversations
+📄 PDF Report Export
 
----
+Generate downloadable analysis reports containing:
 
-## 🎯 Objectives
-
-* Analyze daily and monthly messaging activity
-* Identify the most active participants
-* Study communication patterns
-* Detect peak engagement dates
-* Analyze emoji usage trends
-* Visualize interaction behavior using charts and plots
-
----
-
-## 🛠️ Technologies Used
-
-* 🐍 Python
-* 📊 Pandas
-* 🔢 NumPy
-* 📉 Matplotlib
-* 🎨 Seaborn
-* 🔍 Regex (Regular Expressions)
-* 😀 Emoji Library
-* 📓 Jupyter Notebook
-
----
-
-## 📂 Project Structure
-
-```bash
-WHATSAPP_CHAT_ANALYSIS/
+Timelines
+Activity charts
+Sentiment analysis
+User engagement metrics
+🛠️ Tech Stack
+Category	Technologies
+Frontend	Streamlit
+Data Processing	Pandas, NumPy
+Visualization	Plotly, Matplotlib, Seaborn
+NLP	TextBlob
+Word Cloud	WordCloud
+AI Integration	Google Gemini API
+Reporting	ReportLab
+🚀 How It Works
+Export a WhatsApp chat (Without Media).
+Upload the .txt file to AnalyzU.
+Select:
+Overall Chat Analysis
+Individual Participant Analysis
+Explore interactive insights and visualizations.
+Generate AI summaries and export PDF reports.
+📂 Project Structure
+AnalyzU/
 │
-├── data/
-│   └── FAMILY_GROUP_CLEANEDDATA.txt
-│
-├── notebooks/
-│   └── analysis.ipynb
-│
-├── images/
-│   ├── daily_message_activity.png
-│   ├── top_active_users.png
-│   ├── emoji_analysis.png
-│   └── active_dates.png
-│
-├── README.md
-└── requirements.txt
-```
+├── app.py                # Streamlit application
+├── helper.py             # Analytics functions
+├── preprocessor.py       # WhatsApp chat preprocessing
+├── stop_hinglish.txt     # Custom stopwords
+├── requirements.txt
+├── sample_chat.txt
+└── README.md
+🔒 Privacy First
+Uploaded chats are processed in-memory.
+No permanent storage of user conversations.
+Session data is cleared when the browser session ends.
+AI summaries are generated through Google Gemini API.
 
----
+⚙️ Installation
+git clone https://github.com/your-username/analyzu.git
 
-## 📁 Dataset Information
+cd analyzu
 
-The dataset was exported from a family WhatsApp group chat and processed for analysis purposes.
+pip install -r requirements.txt
 
-### 🔒 Privacy and Ethical Considerations
+streamlit run app.py
+📌 Future Improvements
+Advanced NLP-based topic extraction
+Conversation clustering
+Toxicity detection
+Chatbot-based insights
+Machine Learning prediction models
+Multi-language sentiment analysis
+👩‍💻 Author
 
-* Permission was obtained from family members before using the chat data for this project.
-* All personal names and sensitive information were anonymized.
-* Original participant names were replaced with generic labels such as:
+Banala Vasanthi Laxmi
+B.Tech CSE, IIITDM Jabalpur
 
-  * User 1
-  * Person 1
-  * Person 2
-* Media files and sensitive content were removed before analysis.
-
----
-
-## 🧹 Data Cleaning and Preprocessing
-
-The following preprocessing steps were performed:
-
-1. Parsed raw WhatsApp chat text using Regular Expressions
-2. Extracted:
-
-   * Date & Time
-   * Author Name
-   * Message Content
-3. Removed:
-
-   * `<Media omitted>`
-   * attachment notifications
-4. Combined multiline messages
-5. Converted timestamps into datetime format
-6. Created additional columns:
-
-   * Date
-   * Day
-   * Month
-   * Hour
-7. Anonymized participant names
-8. Removed incomplete and unnecessary records
-
----
-
-## 📊 Analyses Performed
-
-* 📅 Daily Message Activity
-* 👥 Most Active Users
-* 📈 Top Active Dates
-* 😀 Emoji Usage Analysis
-* ⏰ Hourly Activity Analysis
-* 📆 Weekly Activity Trends
-* 💬 Message Frequency Analysis
-
----
-
-## 🔍 Key Insights
-
-* Messaging activity showed significant fluctuations over time.
-* Peak engagement was mostly observed during birthdays, anniversaries, festivals, and family events.
-* Communication patterns were highly event-driven.
-* Certain users contributed more actively to conversations.
-* Emojis played a major role in expressing reactions and emotions.
-
----
-
-## 🚀 Future Improvements
-
-* Sentiment Analysis
-* Word Cloud Generation
-* NLP-based Topic Modeling
-* Interactive Dashboard using Streamlit
-* Advanced Time-Series Analysis
-
----
-
-## ✅ Conclusion
-
-This project demonstrates how data analysis techniques can be applied to conversational datasets to extract meaningful insights about communication behavior while maintaining privacy and ethical responsibility.
+GitHub: https://github.com/vasanthilaxmi
+LinkedIn: www.linkedin.com/in/vasanthi-laxmi-banala
