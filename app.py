@@ -160,32 +160,34 @@ else :
             styles = getSampleStyleSheet()
             elements = []
             elements.append(Paragraph("WhatsApp Chat Analysis Report", styles['Title']))
-
-            fig_time.write_image("time.png")
-            elements.append(Image("time.png", width=450, height=250))
-            elements.append(Spacer(1,20))
-            if(selected_user == 'Overall'):
-                fig_active.write_image("active_users.png")
-                elements.append(Image("active_users.png", width=450, height=250))
+            try : 
+                fig_time.write_image("time.png")
+                elements.append(Image("time.png", width=450, height=250))
                 elements.append(Spacer(1,20))
-            
-            fig_heatmap.write_image("heatmapp.png")
-            elements.append(Image("heatmapp.png", width=450, height=250))
-            elements.append(Spacer(1,20))
-
-            fig_emoji.write_image("emoji.png")
-            elements.append(Image("emoji.png", width=450, height=250))
-            elements.append(Spacer(1,20))
-
-            # fig_wc.write_image("wc.png")
-            fig_hour.write_image("hour.png")
-            elements.append(Image("hour.png", width=450, height=250))
-            elements.append(Spacer(1,20))
-
-            fig_sentiment.write_image("sentiment.png")
-            elements.append(Image("sentiment.png", width=450, height=250))
-            elements.append(Spacer(1,20))
-            
+                if(selected_user == 'Overall'):
+                    fig_active.write_image("active_users.png")
+                    elements.append(Image("active_users.png", width=450, height=250))
+                    elements.append(Spacer(1,20))
+                
+                fig_heatmap.write_image("heatmapp.png")
+                elements.append(Image("heatmapp.png", width=450, height=250))
+                elements.append(Spacer(1,20))
+    
+                fig_emoji.write_image("emoji.png")
+                elements.append(Image("emoji.png", width=450, height=250))
+                elements.append(Spacer(1,20))
+    
+                # fig_wc.write_image("wc.png")
+                fig_hour.write_image("hour.png")
+                elements.append(Image("hour.png", width=450, height=250))
+                elements.append(Spacer(1,20))
+    
+                fig_sentiment.write_image("sentiment.png")
+                elements.append(Image("sentiment.png", width=450, height=250))
+                elements.append(Spacer(1,20))
+            except Exception as e :
+                elements.append(Paragraph("<b>Visual Charts Notice:</b> Charts are omitted in this downloadable PDF version due to server environment restrictions. Please reference the live interactive application dashboard for full visual matrices.", styles['Normal']))
+                elements.append(Spacer(1, 20))
             pdf.build(elements)
             st.success("Report Generated")
             with open("chat_report.pdf", "rb") as pdf_file:
