@@ -147,10 +147,11 @@ streamlit run app.py
 
 ## 👩‍💻 Author
 
-**Banala Vasanthi Laxmi Reddy**
+**Banala Vasanthi Laxmi **
 B.Tech CSE, IIITDM Jabalpur
 
 GitHub: [https://github.com/vasanthilaxmi]
-LinkedIn: [linkedin.com/in/vasanthi-laxmi-banala]
+
+LinkedIn: [www.linkedin.com/in/vasanthi-laxmi-banala]
 
 ---
