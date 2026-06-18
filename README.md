@@ -3,7 +3,7 @@
 
 > 💡 **Important Deployment Note:** Due to an active cross-origin security (CORS) routing bug on the Streamlit Cloud platform, clicking the link directly from GitHub may cause the page to load without its visual styles. For the full interactive dark-mode experience, please copy and paste the URL directly into your browser's address bar or click the ENTER in the URL address bar again:
 > 
-> **Live Web Application URL:** 'https://analyzu.streamlit.app'
+> **Live Web Application URL:** `https://analyzu.streamlit.app`
 
 AnalyzU is an interactive **WhatsApp Chat Analyzer** built with **Python, Streamlit, Pandas, Plotly, and Generative AI**...
 
