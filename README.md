@@ -1,7 +1,7 @@
 
 # 📊 AnalyzU – WhatsApp Chat Analytics Dashboard
 
-**Live Demo:** [Try AnalyzU](https://analyzu.streamlit.app/)
+**Live Demo:** [https://analyzu.streamlit.app/]
 
 AnalyzU is an interactive **WhatsApp Chat Analyzer** built with **Python, Streamlit, Pandas, Plotly, and Generative AI**. It transforms exported WhatsApp chat logs into meaningful insights through advanced visualizations, sentiment analysis, activity tracking, and AI-generated summaries.
 
