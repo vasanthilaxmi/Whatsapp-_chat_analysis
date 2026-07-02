@@ -213,9 +213,10 @@ else :
             if st.button("Analyze with Gemini AI"):
                 with st.spinner("Gemini is analyzing the conversation threads... Please wait."):
                     summary_result = helper.summarize_chat_with_gemini(selected_user, df)
-                    if  "error" in summary_result.lower():
+                    if summary_result.startswith("An error occurred"):
                         st.error(summary_result)  
                     else:
                         st.success("Analysis Complete!")
                         st.markdown("### Executive Summary")
                         st.markdown(summary_result)
+                        
