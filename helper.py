@@ -87,7 +87,7 @@ def active_days(selected_user, df) :
        new_df =  df[df['Author'] == selected_user]
     else :
        new_df = df.copy() 
-    active_day = new_df.groupby('Day').size().reset_index(name='Message_Count').sort_values(by='Message_Count', ascending=False)
+    active_day = new_df.groupby('Day').size().reset_index(name='Message_Count')
     day_order = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
     fig = px.bar(
         active_day, 
@@ -98,7 +98,7 @@ def active_days(selected_user, df) :
     )
     fig.update_traces(marker_color='steelblue', hovertemplate="Day: %{x}<br>Messages: %{y}<extra></extra>")
     fig.update_layout(xaxis_title="Day of the Week", yaxis_title="Message Count", height=400)
-    fig.update_xaxes(tickangle = -45)
+    fig.update_xaxes(tickangle = -45, categoryorder='array', categoryarray=day_order)
     return fig
 
 def active_dates(selected_user, df) :
