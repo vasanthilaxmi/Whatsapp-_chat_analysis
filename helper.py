@@ -69,7 +69,7 @@ def monthly_heatmap(selected_user, df):
         y=heat_df.index.tolist(),
         colorscale='Blues',
         text=heat_df.values,
-        texttemplate="%{text}", # Force numbers to show inside cells natively
+        texttemplate="%{text}",
         hovertemplate="Year: %{y}<br>Month: %{x}<br>Messages: %{z}<extra></extra>"
     ))
     
@@ -87,8 +87,7 @@ def active_days(selected_user, df) :
        new_df =  df[df['Author'] == selected_user]
     else :
        new_df = df.copy() 
-    active_day = new_df.groupby('Day').size().reset_index(name='Message_Count')
-    day_order = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+    active_day = new_df.groupby('Day').size().reset_index(name='Message_Count').sort_values(by='Message_Count', ascending=False)
     fig = px.bar(
         active_day, 
         x='Day', 
@@ -98,7 +97,7 @@ def active_days(selected_user, df) :
     )
     fig.update_traces(marker_color='steelblue', hovertemplate="Day: %{x}<br>Messages: %{y}<extra></extra>")
     fig.update_layout(xaxis_title="Day of the Week", yaxis_title="Message Count", height=400)
-    fig.update_xaxes(tickangle = -45, categoryorder='array', categoryarray=day_order)
+    fig.update_xaxes(tickangle = -45)
     return fig
 
 def active_dates(selected_user, df) :
@@ -112,7 +111,6 @@ def active_dates(selected_user, df) :
     x='Date',
     y='Message_Count',
     color='Message_Count', 
-    # color_continuous_scale='Blues_r',
     title='Top 10 Most Active Dates',
     template='plotly_dark'
     )
