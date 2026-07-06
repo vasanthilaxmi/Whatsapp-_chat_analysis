@@ -122,10 +122,9 @@ def active_dates(selected_user, df) :
     fig.update_xaxes(type = 'category', tickangle= -45) 
     
     return fig
- 
+with open('stop_hinglish.txt', 'r') as f :
+    stop_words = set(f.read().splitlines())
 def remove_stop_words(message):
-    with open('stop_hinglish.txt', 'r') as f :
-        stop_words = f.read()
     y = []
     for word in message.lower().split():
         if word not in stop_words:
